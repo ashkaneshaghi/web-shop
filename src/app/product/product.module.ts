@@ -6,12 +6,12 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 
 
 @NgModule({
-  declarations: [
-    ProductListComponent,
-    ProductDetailComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+    declarations: [
+        ProductListComponent,
+        ProductDetailComponent
+    ],
+    imports: [
+        CommonModule
+    ]
 })
 export class ProductModule { }
