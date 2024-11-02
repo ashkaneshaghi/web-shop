@@ -1,10 +1,26 @@
+<h3 class="mt-3 mb3">Our Last Collection</h3>
+
+<mat-form-field>
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Search" (keyup)="triggerSearch($event)">
+</mat-form-field>
+<mat-form-field class="sort-dropdown">
+    <mat-label>Sort</mat-label>
+    <mat-select (selectionChange)="sortProducts($event.value)">
+        <mat-option value="priceLowHigh">Price: Low to High</mat-option>
+        <mat-option value="priceHighLow">Price: High to Low</mat-option>
+    </mat-select>
+</mat-form-field>
+
+
 <div class="row">
-    <div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2" *ngFor="let product of products">
-        <div class="card">
+    <div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2 col-xxl-2" *ngFor="let product of filteredProducts">
+        <div class="card" (click)="navigateToDetail(product.id, $event)">
             <img src="/assets/images/{{product.image_url}}" class="card-img-top" alt="{{ product.name }}">
             <div class="card-body">
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.price | currency:'EUR' }}</p>
+                <button type="button" class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
             </div>
         </div>
     </div>

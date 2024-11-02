@@ -10,3 +10,25 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
+
+.card.clicked {
+    animation: click-animation 0.3s ease;
+}
+
+@keyframes click-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.sort-dropdown {
+    margin-left: 5px;
+}

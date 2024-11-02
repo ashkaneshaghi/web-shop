@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ProductModule } from './product/product.module';
 import { CartModule } from './cart/cart.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
     declarations: [
@@ -19,9 +21,10 @@ import { CartModule } from './cart/cart.module';
         MatToolbarModule,
         MatButtonModule,
         ProductModule,
-        CartModule
+        CartModule,
+        MatSnackBarModule
     ],
-    providers: [provideHttpClient(withFetch())],
+    providers: [provideHttpClient(withFetch()), provideAnimationsAsync()],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

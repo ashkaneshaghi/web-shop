@@ -9,13 +9,17 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-    private apiUrl = environment.apiUrl + '/products';
+    private apiUrl = environment.apiUrl;
 
     constructor(
         private http: HttpClient
     ) { }
 
     getProducts(): Observable<Product[]> {
-        return this.http.get<Product[]>(this.apiUrl);
+        return this.http.get<Product[]>(this.apiUrl + '/products');
+    }
+
+    getProductById(productId: number): Observable<Product> {
+        return this.http.get<Product>(this.apiUrl + '/product/' + productId);
     }
 }

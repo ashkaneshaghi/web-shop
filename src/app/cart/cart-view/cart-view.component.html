@@ -1,1 +1,22 @@
-<p>cart-view works!</p>
+<h1 class="mt-5 mb-5">Your Cart</h1>
+
+<mat-card>
+    <mat-list>
+        <mat-list-item *ngFor="let item of cartItems">
+            <span matListItemTitle>{{ item.name }}</span>
+            <span matListItemLine>{{ item.price | currency: 'EUR' }}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <span matListItemTitle class="price">Total (€)</span>
+            <span matListItemLine class="price">{{ totalPrice | currency: 'EUR' }}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item class="txt-right">
+            <button type="button" mat-button (click)="clearCart()">Clear</button>
+        </mat-list-item>
+        <mat-list-item class="txt-right">
+            <button type="button" mat-flat-button (click)="checkout()">Checkout</button>
+        </mat-list-item>
+    </mat-list>
+</mat-card>

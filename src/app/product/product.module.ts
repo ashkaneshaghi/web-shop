@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { RouterModule } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -11,7 +14,10 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
         ProductDetailComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule,
+        MatInputModule,
+        MatSelectModule
     ]
 })
 export class ProductModule { }
